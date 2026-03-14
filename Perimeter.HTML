@@ -1,0 +1,37 @@
+# fantastic-pancake
+Калькулятор площади квадрата можно написать а сантиметров
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Периметр квадрата</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body{font-family:system-ui,Arial;padding:2rem;max-width:420px;margin:auto}
+    input,button{font-size:1rem;padding:.5rem;margin-top:.5rem;width:100%}
+    #out{margin-top:1rem;font-weight:600}
+  </style>
+</head>
+<body>
+  <h2>Периметр квадрата</h2>
+
+  <label>Сторона a (см):
+    <input id="side" type="number" placeholder="5" min="0">
+  </label>
+  <button onclick="calc()">Посчитать</button>
+  <p id="out"></p>
+
+  <script>
+    function calc(){
+      const a = parseFloat(document.getElementById('side').value);
+      const out = document.getElementById('out');
+      if(isNaN(a) || a < 0){
+        out.textContent = 'Введи положительное число';
+        return;
+      }
+      const p = 4 * a;                 // ← периметр
+      out.textContent = `Периметр: ${p} см`;
+    }
+  </script>
+</body>
+</html>
