@@ -13,7 +13,7 @@
   </style>
 </head>
 <body>
-  <h2>Периметр квадрата</h2>
+  <h2>Калькулятор периметра и площади квадрата</h2>
 
   <label>Сторона a (см):
     <input id="side" type="number" placeholder="5" min="0">
@@ -29,8 +29,9 @@
         out.textContent = 'Введи положительное число';
         return;
       }
-      const p = 4 * a;                 // ← периметр
-      out.textContent = `Периметр: ${p} см`;
+      const p = 4 * a;                 // периметр
+      const area = a * a;             // площадь
+      out.textContent = `Периметр: ${p} см, Площадь: ${area} см²`;
     }
   </script>
 </body>
